@@ -40,6 +40,18 @@
         }
     </style>
 
+    <script>
+        function fun1() {
+            var username = document.getElementById("uname").value;
+
+            var person = username;
+
+            console.log(person);
+
+            window.localStorage.setItem("user", person);
+        }
+    </script>
+
 </head>
 
 <body>
@@ -59,12 +71,11 @@
             <div class="collapse navbar-collapse" id="navbar">
 
                 <ul class="nav navbar-nav">
+
                     <li class="active" id="al"><a href="attendance.html">attendance</a></li>
                     <li id="al"><a href="#">contasts</a></li>
                     <li id="al"><a href="#">academics</a></li>
                 </ul>
-
-
             </div>
         </div>
 
@@ -74,12 +85,16 @@
 
     <div class="container">
         <form id="align">
-            <input class="form-control" type="text" placeholder="Name" required><br>
-            <input class="form-control" type="number" placeholder="Roll Number" required><br>
-            <input class="form-control" type="text" placeholder="Class" required>
+            <input class="form-control" type="text" id="uname" placeholder="Name" required><br>
+            <input class="form-control" type="number" id="num" placeholder="Roll Number" required><br>
+            <input class="form-control" type="text" id="cls" placeholder="Class" required>
 
+            <button onclick="fun1()" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
+    <p id="join"></p>
+
 </body>
 
 </html>
