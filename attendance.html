@@ -19,13 +19,22 @@
 
     <script>
         function fun1() {
+
             var username = document.getElementById("uname").value;
 
-            var person = username;
+            var rollnum = document.getElementById("num").value;
 
-            console.log(person);
 
-            window.localStorage.setItem("user", person);
+            var existing = localStorage.getItem("ff");
+
+            existing = existing ? existing.split(',') : [];
+
+            existing.push(username);
+
+            localStorage.setItem("ff", existing.toString());
+
+
+
         }
     </script>
 
@@ -55,22 +64,20 @@
                 </ul>
             </div>
         </div>
-
-
     </nav>
 
 
     <div class="container">
-        <form id="align">
+        <form id="align" action="#" method="GET">
             <input class="form-control" type="text" id="uname" placeholder="Name" required><br>
             <input class="form-control" type="number" id="num" placeholder="Roll Number" required><br>
             <input class="form-control" type="text" id="cls" placeholder="Class" required>
 
-            <button onclick="fun1()" class="btn btn-primary">Submit</button>
+            <button value="submit" onClick="fun1()" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
-    <p id="join"></p>
+    <div id="join"></div>
 
 </body>
 
