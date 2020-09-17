@@ -18,30 +18,39 @@
 
 
     <script>
-        var tdy = new Date("nov 14, 2020 12:00:00").getTime();
+        /* var v = "nov 12, 2020 12:00:00"
+                                var tdy = new Date(v).getTime();
 
 
-        var update = setInterval(function() {
+                                var update = setInterval(function() {
 
-            var now = new Date().getTime();
+                                    var now = new Date().getTime();
 
-            var distance = tdy - now;
+                                    var distance = tdy - now;
 
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-            var second = Math.floor((distance % (1000 * 60)) / 1000);
+                                    var second = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("join").innerHTML = days + "d" + hours + "hr" + second + "sec";
+                                    document.getElementById("join").innerHTML = days + "d" + hours + "hr" + second + "sec";
 
-            if (distance < 0) {
-                clearInterval(update);
+                                    if (distance < 0) {
+                                        clearInterval(update);
 
-                document.getElementById("join").innerHTML = "EXPIRED";
-            }
+                                        document.getElementById("join").innerHTML = "EXPIRED";
+                                    }
 
-        }, 1000);
+                                }, 1000);*/
+
+        var ss = 30000
+
+        timeout = setTimeout(delay, ss);
+
+        function delay() {
+
+        }
     </script>
 
 </head>
