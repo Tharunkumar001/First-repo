@@ -7,6 +7,11 @@ body {
     color: cornsilk;
 }
 
+P {
+    text-align: center;
+    font-size: 60px;
+}
+
 form input[type="text"],
 input[type="number"] {
     display: block;

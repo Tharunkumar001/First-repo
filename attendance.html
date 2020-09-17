@@ -18,24 +18,30 @@
 
 
     <script>
-        function fun1() {
-
-            var username = document.getElementById("uname").value;
-
-            var rollnum = document.getElementById("num").value;
+        var tdy = new Date("nov 14, 2020 12:00:00").getTime();
 
 
-            var existing = localStorage.getItem("ff");
+        var update = setInterval(function() {
 
-            existing = existing ? existing.split(',') : [];
+            var now = new Date().getTime();
 
-            existing.push(username);
+            var distance = tdy - now;
 
-            localStorage.setItem("ff", existing.toString());
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
+            var second = Math.floor((distance % (1000 * 60)) / 1000);
 
-        }
+            document.getElementById("join").innerHTML = days + "d" + hours + "hr" + second + "sec";
+
+            if (distance < 0) {
+                clearInterval(update);
+
+                document.getElementById("join").innerHTML = "EXPIRED";
+            }
+
+        }, 1000);
     </script>
 
 </head>
@@ -64,20 +70,21 @@
                 </ul>
             </div>
         </div>
+
     </nav>
 
 
     <div class="container">
-        <form id="align" action="#" method="GET">
+        <form id="align">
             <input class="form-control" type="text" id="uname" placeholder="Name" required><br>
             <input class="form-control" type="number" id="num" placeholder="Roll Number" required><br>
             <input class="form-control" type="text" id="cls" placeholder="Class" required>
 
-            <button value="submit" onClick="fun1()" class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary">Submit</button>
         </form>
     </div>
 
-    <div id="join"></div>
+    <P id="join"></P>
 
 </body>
 
