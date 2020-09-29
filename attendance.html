@@ -19,44 +19,27 @@
 
 
     <script>
-        function fun1() {
-            d = new Date();
-            dt = d.getDate();
-            mn = d.getMonth();
-            yy = d.getFullYear();
+        var dd = "dec 12,2020 12:12";
+        fun2();
 
-            list1 = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Agust", "Sep", "Oct", "Nov", "Dec"];
-            for (i = 0; i < 13; i++) {
-                if (mn == i) {
-                    var mon = list1[i];
-                }
-            }
-
-
-            var time = document.getElementById("time").value;
-            var date = document.getElementById("date").value = mon + " " + dt + "," + yy + " " + time;
-            console.log(date);
-
-            var update = setInterval(function() {
-
-                var tdy = new Date(date).getTime();
-
-                var now = new Date().getTime();
-                var distance = tdy - now;
-                console.log(tdy);
-                console.log(distance);
-                console.log(now)
-
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var second = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById("join").innerHTML = days + "d" + hours + "hr" + second + "sec";
-                if (distance < 0) {
-                    clearInterval(update);
-                    document.getElementById("join").innerHTML = "EXPIRED";
-                }
-            }, 1000);
+        function fun2() {
+            var dd = "nov 14,2020 12:12";
         }
+        console.log(dd);
+        d = new Date();
+        dt = d.getDate();
+        mn = d.getMonth();
+        yy = d.getFullYear();
+
+        list1 = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Agust", "Sep", "Oct", "Nov", "Dec"];
+        for (i = 0; i < 13; i++) {
+            if (mn == i) {
+                var mon = list1[i];
+            }
+        }
+        var time = document.getElementById("time").value;
+        var date = mon + '' + dt + ',' + yy + ' ' + time;
+        console.log(date);
     </script>
 
 </head>
@@ -112,7 +95,7 @@
                     </form>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" id="sub" onclick="fun1()" class="btn btn-default" data-submit="modal">Done</button>
+                        <button type="submit" id="sub" onclick="" class="btn btn-default" data-submit="modal">Done</button>
                     </div>
                 </div>
             </div>
