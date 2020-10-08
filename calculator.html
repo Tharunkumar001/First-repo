@@ -1,64 +1,132 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="master.css">
+    <link href="attendance.html">
+    <title>
+
+    </title>
     <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: 60px 60px 60px;
-            grid-gap: 10px;
+        input[type="button"] {
+            border-radius: 10px;
+            background-color: aqua;
+            color: black;
+            border-color: antiquewhite;
+            width: 100%;
+        }
+        
+        input[type="text"] {
+            border-radius: 10px;
             text-align: center;
-        }
-        
-        .grid-item {
-            border: 2px solid brown;
-        }
-        
-        .grid-container1 {
-            display: grid;
-            grid-template-rows: 60px;
+            background-color: white;
+            border: black;
+            width: 100%;
         }
     </style>
 
-</head>
+    <script>
+        function fun1(val) {
+            document.getElementById("scr").value += val;
+        }
 
-<body>
-    <div class="grid-container1">
-        <div class="grid-item"></div>
-    </div>
-    <div class="grid-container">
-        <button><div class="grid-item">1</a></div></button>
-        <button> <div class="grid-item">2</div></button>
-        <button><div class="grid-item">3</div></button>
-        <button> <div class="grid-item">4</div></button>
-        <button><div class="grid-item">5</div></button>
-        <button><div class="grid-item">6</div></button>
-        <button><div class="grid-item">7</div></button>
-        <button><div class="grid-item">8</div></button>
-        <button><div class="grid-item">9</div></button>
-        <button> <div class="grid-item">0</div></button>
-        <button><div class="grid-item">00</div></button>
-        <button><div class="grid-item">+</div></button>
-        <button> <div class="grid-item">-</div></button>
-        <button><div class="grid-item">%</div></button>
-        <button><div class="grid-item">/</div></button>
-        <button><div class="grid-item">*</div></button>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-    </div>
-</body>
+        function solve() {
+            let x = document.getElementById("scr").value;
+            let y = eval(x);
+            document.getElementById("scr").value = y;
+
+        }
+
+        function clr() {
+            document.getElementById("scr").value = ""
+        }
+    </script>
+
+    <body>
+        <h1 id="tt">Hakuna Matataa</h1>
+
+        <nav class="navbar  navbar-inverse">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                    <p class="navbar-brand"><a class="active" style="color: cornsilk;" href="#"><strong>W</strong>hat's <strong>T</strong>hat</a></p>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+
+                    <ul class="nav navbar-nav">
+                        <li id="al"><a href="attendance.html">attendance</a></li>
+                        <li id="al"><a href="#">contasts</a></li>
+                        <li id="al"><a href="#">academics</a></li>
+                        <li id="al"><a class="active" href="#">Tools</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <table border="1">
+            <tr>
+                <td colspan="3"><input type="text" id="scr" onclick="fun1(1)"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="1" onclick="fun1('1')"></td>
+                <td><input type="button" value="2" onclick="fun1('2')"></td>
+                <td><input type="button" value="3" onclick="fun1('2')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="4" onclick="fun1('4')"></td>
+                <td><input type="button" value="5" onclick="fun1('5')"></td>
+                <td><input type="button" value="6" onclick="fun1('6')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="7" onclick="fun1('7')"></td>
+                <td><input type="button" value="8" onclick="fun1('8')"></td>
+                <td><input type="button" value="9" onclick="fun1('9')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="." onclick="fun1('.')"></td>
+                <td><input type="button" value="0" onclick="fun1('0')"></td>
+                <td><input type="button" value="00" onclick="fun1('00')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="+" onclick="fun1('+')"></td>
+                <td><input type="button" value="-" onclick="fun1('-')"></td>
+                <td><input type="button" value="*" onclick="fun1('*')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="/" onclick="fun1('/')"></td>
+                <td><input type="button" value="%" onclick="fun1('%')"></td>
+                <td colspan="3"><input type="button" value="=" onclick="solve()"></td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="3"><input type="button" value="c" onclick="clr()"></td>
+            </tr>
+
+
+
+        </table>
+
+    </body>
 
 </html>

@@ -36,10 +36,13 @@ form {
     margin: auto;
 }
 
+h4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    color: saddlebrown;
     padding: 10px;
     grid-gap: 20px;
     border-color: slateblue;
